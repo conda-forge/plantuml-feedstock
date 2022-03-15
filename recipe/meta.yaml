@@ -14,10 +14,10 @@ build:
 requirements:
   build:
     - maven
-    - graphviz
+    - graphviz <3
   run:
     - openjdk
-    - graphviz
+    - graphviz <3
 
 test:
   commands:
