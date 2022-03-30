@@ -13,15 +13,18 @@ build:
 
 requirements:
   build:
-    - maven
+    - openjdk
+    - gradle
     - graphviz
   run:
     - openjdk
     - graphviz
 
 test:
+  requires:
+    - m2-grep  # [win]
   commands:
-    - plantuml -version
+    - plantuml -version | grep -E {{ version.replace('.', '\.') }}
     - plantuml -help
 
 about:
