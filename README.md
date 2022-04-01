@@ -1,7 +1,7 @@
 About plantuml
 ==============
 
-Home: http://plantuml.com
+Home: https://plantuml.com
 
 Package license: GPL-3.0-or-later
 
