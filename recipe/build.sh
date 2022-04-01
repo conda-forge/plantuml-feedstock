@@ -3,7 +3,11 @@ set -eux
 
 export MAVEN_OPTS="-Xmx1G"
 
-gradle -q clean build pdfJar -x test
+gradle tasks --all
+
+gradle clean build pdfJar -x test
+
+ls -lathr build/libs
 
 cp build/libs/plantuml-pdf-*.jar "${PREFIX}/lib/plantuml.jar"
 
