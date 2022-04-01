@@ -4,7 +4,11 @@ set MAVEN_OPTS="-Xmx1G"
 
 cd %SRC_DIR%
 
-call gradle -q clean build pdfJar -x test
+call gradle tasks
+
+call gradle clean build pdfJar -x test
+
+dir build\libs
 
 if not exist %LIBRARY_LIB% mkdir %LIBRARY_LIB%
 
