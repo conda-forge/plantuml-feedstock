@@ -14,10 +14,8 @@ build:
 requirements:
   build:
     - openjdk
-    - gradle  # [unix]
+    - gradle
     - graphviz
-  host:
-    - gradle  # [win]
   run:
     - openjdk
     - graphviz
