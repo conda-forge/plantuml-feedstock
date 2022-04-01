@@ -13,22 +13,23 @@ build:
 
 requirements:
   build:
-    - openjdk
+    - openjdk >=11
     - gradle
     - graphviz
   run:
-    - openjdk
+    - openjdk >=11
     - graphviz
 
 test:
   requires:
     - m2-grep  # [win]
+    - openjdk >=11
   commands:
     - plantuml -version | grep -E {{ version.replace('.', '\.') }}
     - plantuml -help
 
 about:
-  home: http://plantuml.com
+  home: https://plantuml.com
   license: GPL-3.0-or-later
   license_file: COPYING
   summary: Generate UML diagram from textual description
