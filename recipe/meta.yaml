@@ -1,4 +1,4 @@
-{% set version = "1.2022.7" %}
+{% set version = "1.2022.8" %}
 
 package:
   name: plantuml
@@ -6,10 +6,10 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 8e76c339080678db1b784d54498a4893e1142b93aca6fa978d8188fbb5b724a6
+  sha256: 3f5e7fd0e0f1b7915e785d0a7faacfdb79f6542d624f12598e3147d85027cc44
 
 build:
-  number: 1
+  number: 0
   # TODO: restore after https://github.com/conda-forge/gradle-feedstock/pull/51
   skip: true  # [win]
 
