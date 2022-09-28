@@ -26,8 +26,9 @@ test:
   requires:
     - m2-grep  # [win]
   commands:
-    - plantuml -version | grep -E {{ version.replace('.', '\.') }}
     - plantuml -help
+    - plantuml -version
+    - plantuml -version | grep -E {{ version.replace('.', '\.') }}
 
 about:
   home: http://plantuml.com
