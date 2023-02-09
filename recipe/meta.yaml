@@ -9,9 +9,7 @@ source:
   sha256: 70b76abf9bd5468524f9c7188504a8bdab7013780ddf928086b58836ec130617
 
 build:
-  number: 0
-  # TODO: restore after https://github.com/conda-forge/gradle-feedstock/pull/51
-  skip: true  # [win]
+  number: 1
 
 requirements:
   build:
