@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 810de6ad2a3b584207938db1234539befa619fb4d649d2e8632bc15a959eb359
+  sha256: bc0d1ea6633a538941c3ae3699ad7ef19c9767ab23fbe4af9325fd5847354f69
 
 build:
   number: 0
