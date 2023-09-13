@@ -1,4 +1,4 @@
-{% set version = "1.2023.10" %}
+{% set version = "1.2023.11" %}
 
 package:
   name: plantuml
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: d0e43385542a514a8964e1268f7b73eaf618f7a30cf4873305e5b73fa841666e
+  sha256: 70dc0b2fcb738abd7d2c7012085a04d34e7d90e64a517afbc09ebf26ef1c112a
 
 build:
   number: 0
