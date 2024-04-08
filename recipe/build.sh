@@ -5,6 +5,7 @@ export MAVEN_OPTS="-Xmx1G"
 
 gradle clean build pdfJar -x test
 
+mkdir -p "${PREFIX}/lib"
 cp build/libs/plantuml-pdf-*.jar "${PREFIX}/lib/plantuml.jar"
 
 echo '#!/bin/bash' > $PREFIX/bin/plantuml
