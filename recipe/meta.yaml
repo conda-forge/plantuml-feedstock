@@ -7,6 +7,8 @@ package:
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v{{ version }}.tar.gz
   sha256: 7bb44fc1c53e73b5ac940df5ab47c625eb39453b128686ba456f06d1db361c94
+  patches:
+    - 0000-pdf-jar-perms-gh-1851.patch
 
 build:
   number: 0
