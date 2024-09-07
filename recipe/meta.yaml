@@ -1,4 +1,4 @@
-{% set version = "1.2024.6" %}
+{% set version = "1.2024.7" %}
 
 package:
   name: plantuml
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 7bb44fc1c53e73b5ac940df5ab47c625eb39453b128686ba456f06d1db361c94
+  sha256: 4cdfdf38093b29b41cbafbd88e30c598c903618015c6807cfa6fc16f6e97a31e
   patches:
     - 0000-pdf-jar-perms-gh-1851.patch
 
