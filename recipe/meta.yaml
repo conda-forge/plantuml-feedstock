@@ -9,12 +9,13 @@ source:
   sha256: 4430ab69c296ff7cf0656f206b769f3d7cddca599cb69011fc20438ce5bb613a
 
 build:
-  number: 0
+  number: 1
 
 requirements:
   build:
     - openjdk
-    - gradle
+    # see https://github.com/conda-forge/plantuml-feedstock/issues/60
+    - gradle >=8.11.1
     - graphviz
   run:
     - openjdk
