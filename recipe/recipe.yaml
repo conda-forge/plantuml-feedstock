@@ -3,7 +3,6 @@ schema_version: 1
 
 context:
   version: 1.2025.1
-  openjdk_min: "8"
 
 package:
   name: plantuml
