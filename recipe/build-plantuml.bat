@@ -2,6 +2,7 @@
 
 CALL gradlew.bat
 CALL gradlew clean build pdfJar -x test
+CALL gradlew --stop
 
 IF NOT EXIST "%LIBRARY_LIB%" mkdir "%LIBRARY_LIB%"
 IF NOT EXIST "%LIBRARY_BIN%" mkdir "%LIBRARY_BIN%"
