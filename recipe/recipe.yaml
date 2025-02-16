@@ -34,8 +34,9 @@ tests:
           then:
             - m2-grep
     script:
-      - plantuml -version | grep -iE "{{ version | replace('.', '\\.') }}"
+      - plantuml -version
       - plantuml -help
+      - plantuml -version | grep -iE "{{ version | replace('.', '\\.') }}"
 
 about:
   homepage: http://plantuml.com

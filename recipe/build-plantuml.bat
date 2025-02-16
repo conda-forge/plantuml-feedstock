@@ -3,17 +3,14 @@
 CALL gradlew.bat
 CALL gradlew clean build pdfJar -x test
 
-CALL if not exist %LIBRARY_LIB% mkdir %LIBRARY_LIB%
+IF NOT EXIST "%LIBRARY_LIB%" mkdir "%LIBRARY_LIB%"
+IF NOT EXIST "%LIBRARY_BIN%" mkdir "%LIBRARY_BIN%"
 
-CALL echo F | xcopy .\build\libs\plantuml-pdf-*.jar %LIBRARY_LIB%\plantuml.jar || goto :error
+CALL echo F | xcopy .\build\libs\plantuml-pdf-*.jar "%LIBRARY_LIB%\plantuml.jar"
 
-if not exist %LIBRARY_BIN% mkdir %LIBRARY_BIN%
+ECHO java -Xmx500M -jar %LIBRARY_LIB%\plantuml.jar "$@"     %%*> %LIBRARY_BIN%\plantuml.bat
+ECHO IF %%ERRORLEVEL%% NEQ 0 EXIT /B %%ERRORLEVEL%%         >> %LIBRARY_BIN%\plantuml.bat
 
-echo java -Xmx500M -jar %LIBRARY_LIB%\plantuml.jar "$@" %%*> %LIBRARY_BIN%\plantuml.bat
-echo IF %%ERRORLEVEL%% NEQ 0 EXIT /B %%ERRORLEVEL%% >> %LIBRARY_BIN%\plantuml.bat
-
-type %LIBRARY_BIN%\plantuml.bat
-
-:error
-echo Failed with error #%errorlevel%.
-exit /b %errorlevel%
+ECHO "----------------------- generated wrapper script ------------------------"
+TYPE "%LIBRARY_BIN%\plantuml.bat"
+ECHO "-------------------------------------------------------------------------"

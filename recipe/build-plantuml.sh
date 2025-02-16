@@ -16,6 +16,6 @@ EOF
 
 chmod +x "${PREFIX}/bin/plantuml"
 
-echo "generated wrapper script:"
-
+echo "----------------------- generated wrapper script ------------------------"
 cat "${PREFIX}/bin/plantuml"
+echo "-------------------------------------------------------------------------"
