@@ -1,0 +1,79 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/prefix-dev/recipe-format/main/schema.json
+schema_version: 1
+
+context:
+  version: 1.2025.1
+  openjdk_min: "8"
+
+package:
+  name: plantuml
+  version: ${{ version }}
+
+source:
+  url: https://github.com/plantuml/plantuml/archive/refs/tags/v${{ version }}.tar.gz
+  sha256: 0720a7b4eea6f1c5e9e20152de09b36086e7bb65c19bf8735490b263e30f7b13
+
+build:
+  number: 0
+  script:
+    file: build-plantuml
+
+requirements:
+  build:
+    - openjdk ${{ openjdk_min }}.*
+    # see https://github.com/conda-forge/plantuml-feedstock/issues/60
+    - gradle >=8.11.1
+    - graphviz
+  run:
+    - openjdk >=${{ openjdk_min }}
+    - graphviz
+
+tests:
+  - requirements:
+      run:
+        - if: win
+          then:
+            - m2-grep
+    script:
+      - plantuml -version | grep -iE "{{ version | replace('.', '\\.') }}"
+      - plantuml -help
+
+about:
+  homepage: http://plantuml.com
+  license_file: COPYING
+  license: GPL-3.0-or-later
+  repository: https://github.com/plantuml/plantuml
+  summary: Generate UML diagram from textual description
+  description: |
+    PlantUML is a component that allows to quickly write:
+
+    - Sequence diagram,
+    - Use case diagram,
+    - Class diagram,
+    - Activity diagram,
+    - Component diagram,
+    - State diagram,
+    - Object diagram,
+    - Deployment diagram,
+    - Timing diagram
+
+    And also:
+
+    - Activity diagram (legacy syntax)
+    - Archimate diagram
+    - Gantt charts
+    - SALT UI mockups
+
+    Furthermore:
+
+    - Hyperlinks and tooltips
+    - Creole: rich text, emoticons, unicode, icons
+    - OpenIconic icons
+    - Sprite icons
+    - AsciiMath mathematical expressions
+
+    To know more about PlantUML, please visit http://plantuml.com/
+
+extra:
+  recipe-maintainers:
+    - bollwyvl
