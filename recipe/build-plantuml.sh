@@ -9,7 +9,7 @@ mkdir -p "${PREFIX}/lib" "${PREFIX}/bin"
 
 cp build/libs/plantuml-pdf-*.jar "${PREFIX}/lib/plantuml.jar"
 
-cat << 'EOF' | sed "s#__PREFIX__#${PREFIX}#" > "${PREFIX}/bin/plantuml"
+cat << 'EOF' | sed 's#__PREFIX__#'"${PREFIX}"'#' > "${PREFIX}/bin/plantuml"
 #!/usr/bin/env bash
 java -Xmx500M -jar "__PREFIX__/lib/plantuml.jar" "$@"
 EOF
