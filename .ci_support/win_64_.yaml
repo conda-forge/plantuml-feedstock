@@ -4,5 +4,7 @@ channel_targets:
 - conda-forge main
 graphviz:
 - '12'
+openjdk_min:
+- '8'
 target_platform:
 - win-64

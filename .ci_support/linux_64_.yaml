@@ -8,5 +8,7 @@ docker_image:
 - quay.io/condaforge/linux-anvil-x86_64:alma9
 graphviz:
 - '12'
+openjdk_min:
+- '8'
 target_platform:
 - linux-64

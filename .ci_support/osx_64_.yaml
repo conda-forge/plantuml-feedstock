@@ -10,5 +10,7 @@ graphviz:
 - '12'
 macos_machine:
 - x86_64-apple-darwin13.4.0
+openjdk_min:
+- '8'
 target_platform:
 - osx-64

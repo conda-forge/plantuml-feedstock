@@ -3,7 +3,7 @@ About plantuml-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/plantuml-feedstock/blob/main/LICENSE.txt)
 
-Home: http://plantuml.com
+Home: http://plantuml.com/
 
 Package license: GPL-3.0-or-later
 
@@ -13,33 +13,32 @@ Development: https://github.com/plantuml/plantuml
 
 PlantUML is a component that allows to quickly write:
 
-  - Sequence diagram,
-  - Use case diagram,
-  - Class diagram,
-  - Activity diagram,
-  - Component diagram,
-  - State diagram,
-  - Object diagram,
-  - Deployment diagram,
-  - Timing diagram
+- Sequence diagram,
+- Use case diagram,
+- Class diagram,
+- Activity diagram,
+- Component diagram,
+- State diagram,
+- Object diagram,
+- Deployment diagram,
+- Timing diagram
 
 And also:
 
-  - Activity diagram (legacy syntax)
-  - Archimate diagram
-  - Gantt charts
-  - SALT UI mockups
+- Activity diagram (legacy syntax)
+- Archimate diagram
+- Gantt charts
+- SALT UI mockups
 
 Furthermore:
 
-  - Hyperlinks and tooltips
-  - Creole: rich text, emoticons, unicode, icons
-  - OpenIconic icons
-  - Sprite icons
-  - AsciiMath mathematical expressions
+- Hyperlinks and tooltips
+- Creole: rich text, emoticons, unicode, icons
+- OpenIconic icons
+- Sprite icons
+- AsciiMath mathematical expressions
 
 To know more about PlantUML, please visit http://plantuml.com/
-
 
 Current build status
 ====================
