@@ -3,7 +3,7 @@ channel_sources:
 channel_targets:
 - conda-forge main
 graphviz:
-- '12'
+- '13'
 openjdk_min:
 - '8'
 target_platform:

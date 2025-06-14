@@ -13,7 +13,7 @@ source:
   sha256: 81679a8dda219873c8a307dc96233246ace1dc2ab9294f53a87de9cb1c520d8b
 
 build:
-  number: 0
+  number: 1
   script:
     file: build-plantuml
 
