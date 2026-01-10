@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.2025.10"
+  version: "1.2026.0"
 
 package:
   name: plantuml
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: d913c0526f68a43a91b524c709ab4190cbf7d8d74830d216f5c1c6eeaf6550c9
+  sha256: 5e05d0a4a43d8c2ebe81f90efa4d82dd0b74b83e7c02fa78132894f56c1727e0
 
 build:
-  number: 1
+  number: 0
   script:
     file: build-plantuml
 
