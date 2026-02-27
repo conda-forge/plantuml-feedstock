@@ -7,7 +7,7 @@ ant -noinput
 
 mkdir -p "${PREFIX}/lib" "${PREFIX}/bin"
 
-cp build/libs/plantuml.jar "${PREFIX}/lib/plantuml.jar"
+cp plantuml.jar "${PREFIX}/lib/plantuml.jar"
 
 cat << 'EOF' | sed 's#__PREFIX__#'"${PREFIX}"'#' > "${PREFIX}/bin/plantuml"
 #!/usr/bin/env bash
