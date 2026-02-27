@@ -22,7 +22,7 @@ requirements:
   build:
     - openjdk ${{ openjdk_min }}.*
     # see https://github.com/conda-forge/plantuml-feedstock/issues/60
-    - gradle >=8.11.1
+    - gradle >=8.11.1,<9
     - graphviz
   run:
     - openjdk >=${{ openjdk_min }}
