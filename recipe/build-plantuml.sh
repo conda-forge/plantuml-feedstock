@@ -3,11 +3,11 @@ set -eux -o pipefail
 
 export MAVEN_OPTS="-Xmx1G"
 
-gradle clean build pdfJar -x test
+ant -noinput
 
 mkdir -p "${PREFIX}/lib" "${PREFIX}/bin"
 
-cp build/libs/plantuml-pdf-*.jar "${PREFIX}/lib/plantuml.jar"
+cp plantuml.jar "${PREFIX}/lib/plantuml.jar"
 
 cat << 'EOF' | sed 's#__PREFIX__#'"${PREFIX}"'#' > "${PREFIX}/bin/plantuml"
 #!/usr/bin/env bash

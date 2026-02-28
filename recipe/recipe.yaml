@@ -2,7 +2,11 @@
 schema_version: 1
 
 context:
-  version: "1.2026.1"
+  version: "1.2026.2"
+  openjdk_min: "8"
+  openjdk_check_max: "25"
+  contains_version: |
+    ${{ "grep -iE" if unix else "findstr /c" }} "${{ version | replace('.', '\\.') }}"
 
 package:
   name: plantuml
@@ -10,7 +14,7 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: dbf6725f740dc45fff95e2b078d79228826816ce7e308c5e2bae56214a00195b
+  sha256: 6b359e2734f91db987900ac7b72989c1b6a878b9cab34d2af965234090599f0c
 
 build:
   number: 0
@@ -19,10 +23,9 @@ build:
 
 requirements:
   build:
-    - openjdk ${{ openjdk_min }}.*
-    # see https://github.com/conda-forge/plantuml-feedstock/issues/60
-    - gradle >=8.11.1
+    - ant
     - graphviz
+    - openjdk ${{ openjdk_min }}.*
   run:
     - openjdk >=${{ openjdk_min }}
     - graphviz
@@ -30,13 +33,18 @@ requirements:
 tests:
   - requirements:
       run:
-        - if: win
-          then:
-            - m2-grep
+        - openjdk ${{ openjdk_min }}.*
     script:
       - plantuml -version
       - plantuml -help
-      - plantuml -version | grep -iE "${{ version | replace('.', '\\.') }}"
+      - plantuml -version | ${{ contains_version }}
+  - requirements:
+      run:
+        - openjdk ${{ openjdk_check_max }}.*
+    script:
+      - plantuml -version
+      - plantuml -help
+      - plantuml -version | ${{ contains_version }}
 
 about:
   homepage: http://plantuml.com
