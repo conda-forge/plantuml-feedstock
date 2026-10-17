@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.2026.8"
+  version: "1.2026.9"
   openjdk_min: "8"
   openjdk_check_max: "25"
   contains_version: |
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: caa1dc0b2df3058c38b69de5878eb048a24a99346aeab663b7027e85cdc83467
+  sha256: 9998e5afacf3dc532acae52fe6992e4de21828d34857aaff12a43dc98b9acdf6
 
 build:
   number: 0
@@ -31,6 +31,12 @@ requirements:
     - graphviz
 
 tests:
+  - package_contents:
+      strict: true
+      bin:
+        - plantuml
+      files:
+        - ${{ "Library/" if win }}lib/plantuml.jar
   - requirements:
       run:
         - openjdk ${{ openjdk_min }}.*
