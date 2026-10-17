@@ -31,6 +31,12 @@ requirements:
     - graphviz
 
 tests:
+  - package_contents:
+      strict: true
+      bin:
+        - plantuml
+      files:
+        - ${{ "Library/" if win }}lib/plantuml.jar
   - requirements:
       run:
         - openjdk ${{ openjdk_min }}.*
