@@ -17,7 +17,7 @@ source:
   sha256: 9998e5afacf3dc532acae52fe6992e4de21828d34857aaff12a43dc98b9acdf6
 
 build:
-  number: 0
+  number: 1
   script:
     file: build-plantuml
 
