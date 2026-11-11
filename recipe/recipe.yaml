@@ -2,7 +2,7 @@
 schema_version: 1
 
 context:
-  version: "1.2026.9"
+  version: "1.2026.10"
   openjdk_min: "8"
   openjdk_check_max: "25"
   contains_version: |
@@ -14,7 +14,7 @@ package:
 
 source:
   url: https://github.com/plantuml/plantuml/archive/refs/tags/v${{ version }}.tar.gz
-  sha256: 9998e5afacf3dc532acae52fe6992e4de21828d34857aaff12a43dc98b9acdf6
+  sha256: be2f2096ec2e8200bc4f18930de74448aa7f36932aceb12875381ce29ffdfeb4
 
 build:
   number: 0
